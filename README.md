@@ -1,0 +1,1 @@
+This repository connected to the local Teamcity instance and uses just for local development and learning purposes.
