@@ -37,5 +37,19 @@ object First : BuildType({
     vcs {
         root(DslContext.settingsRoot)
     }
+    schedule {
+        schedulingPolicy = cron {
+            seconds = "*"
+            minutes = "*"
+            hours = "*"
+            dayOfMonth = "*"
+            dayOfWeek = "*"
+            month = "*"
+            year = "*"
+        }
+        branchFilter = "+:master"
+        triggerBuild = always()
+        withPendingChangesOnly = false
+    }
 
 })
