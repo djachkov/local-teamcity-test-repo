@@ -48,7 +48,7 @@ object First : BuildType({
                 month = "*"
                 year = "*"
             }
-            branchFilter = "+:*"
+            branchFilter = "+:refs/heads/master"
             triggerBuild = always()
             withPendingChangesOnly = false
         }
