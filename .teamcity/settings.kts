@@ -1,5 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
+import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.schedule
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -39,6 +40,20 @@ object First : BuildType({
 
     triggers {
         vcs {
+        }
+        schedule {
+            schedulingPolicy = cron {
+                seconds = "35"
+                minutes = "0"
+                hours = "16"
+                dayOfWeek = "*"
+                dayOfMonth = "*"
+                month = "*"
+                year = "*"
+            }
+            branchFilter = "+:master"
+            triggerBuild = always()
+            withPendingChangesOnly = false
         }
     }
 })
