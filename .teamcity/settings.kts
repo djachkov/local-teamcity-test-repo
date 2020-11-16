@@ -37,10 +37,7 @@ object First : BuildType({
     vcs {
         root(DslContext.settingsRoot)
     }
-
     triggers {
-        vcs {
-        }
         schedule {
             schedulingPolicy = cron {
                 seconds = "0"
@@ -56,4 +53,5 @@ object First : BuildType({
             withPendingChangesOnly = false
         }
     }
+
 })
