@@ -43,15 +43,15 @@ object First : BuildType({
         }
         schedule {
             schedulingPolicy = cron {
-                seconds = "35"
-                minutes = "0"
-                hours = "16"
+                seconds = "0"
+                minutes = "*"
+                hours = "*"
                 dayOfWeek = "*"
                 dayOfMonth = "*"
                 month = "*"
                 year = "*"
             }
-            branchFilter = "+:master"
+            branchFilter = "+:*"
             triggerBuild = always()
             withPendingChangesOnly = false
         }
