@@ -39,9 +39,9 @@ object First : BuildType({
     }
     schedule {
             schedulingPolicy = cron {
-                seconds = "35"
-                minutes = "0"
-                hours = "16"
+                seconds = "*"
+                minutes = "*"
+                hours = "*"
                 dayOfWeek = "*"
                 dayOfMonth = "*"
                 month = "*"
