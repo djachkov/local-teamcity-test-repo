@@ -38,18 +38,18 @@ object First : BuildType({
         root(DslContext.settingsRoot)
     }
     schedule {
-        schedulingPolicy = cron {
-            seconds = "*"
-            minutes = "*"
-            hours = "*"
-            dayOfMonth = "*"
-            dayOfWeek = "*"
-            month = "*"
-            year = "*"
+            schedulingPolicy = cron {
+                seconds = "35"
+                minutes = "0"
+                hours = "16"
+                dayOfWeek = "*"
+                dayOfMonth = "*"
+                month = "*"
+                year = "*"
+            }
+            branchFilter = "+:master"
+            triggerBuild = always()
+            withPendingChangesOnly = false
         }
-        branchFilter = "+:master"
-        triggerBuild = always()
-        withPendingChangesOnly = false
-    }
 
 })
