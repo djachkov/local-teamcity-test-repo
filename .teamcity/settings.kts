@@ -27,11 +27,11 @@ version = "2020.1"
 
 project {
 
-    buildType(First)
+    buildType(Build)
 }
 
-object First : BuildType({
-    name = "First"
+object Build : BuildType({
+    name = "Build"
 
     vcs {
         root(DslContext.settingsRoot)
