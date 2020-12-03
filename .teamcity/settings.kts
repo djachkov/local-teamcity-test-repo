@@ -38,7 +38,20 @@ object First : BuildType({
     }
 
     triggers {
-        vcs {
+        schedule {
+            schedulingPolicy = cron {
+                seconds = "0"
+                minutes = "0"
+                hours = "17"
+                dayOfWeek = "WED,SUN"
+                dayOfMonth = "*"
+                month = "*"
+                year = "*"
+            }
+            branchFilter = ""
+            triggerBuild = always()
+            withPendingChangesOnly = false
+            enabled = DslContext.settingsRoot.name == "main root"
         }
     }
 })
